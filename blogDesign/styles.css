@@ -35,16 +35,17 @@ body {
 }
 
 .header {
-  background-color: var(--signatureColor);
-  color: white;
+  background-color: white;
+  color: #777;
   display: flex;
   justify-content: space-between;
   padding: 15px 20px;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  flex-wrap: wrap;
 }
 
 .blog__logo {
-  padding: 15px 20px;
+  padding: 15px 0px;
   font-family: "Kaushan Script", cursive;
   font-weight: 800;
   font-size: 1.25rem;
@@ -52,8 +53,22 @@ body {
   text-decoration: none;
 }
 
+.button__toggle {
+  border-color: rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 7px;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.button__hamburger {
+  transform: rotate(90deg);
+  display: inline-block;
+}
+
 .header .navigation {
-  width: 40%;
+  width: 90%;
 }
 
 .header .blog__logo:hover,
@@ -63,11 +78,13 @@ body {
 
 .menu__list {
   list-style: none;
-  display: grid;
+  display: flex;
+  justify-content: flex-end;
+  /* display: grid;
   grid-template-columns: repeat(3, minmax(min-content, 1fr));
   place-items: center center;
   margin-top: 10px;
-  margin-left: 40%;
+  margin-left: 40%; */
 }
 .menu__item {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -75,6 +92,11 @@ body {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
+  padding: 15px 20px;
+}
+
+.menu__item__hide {
+  display: none;
 }
 
 .menu__link {
@@ -200,4 +222,40 @@ svg {
   margin: 30px 0;
   color: #868e96 !important;
   font-weight: 400;
+}
+
+/* responsive */
+@media only screen and (min-width: 992px) {
+  .header {
+    background-color: var(--signatureColor);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  .button__toggle {
+    display: none;
+  }
+
+  .navigation {
+    display: block;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .menu__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    align-items: flex-start;
+  }
+
+  .header .blog__logo:hover,
+  .header .menu__link:hover {
+    color: rgba(3, 3, 3, 0.8);
+  }
+  /* .navigation {
+    display: none;
+  } */
 }
