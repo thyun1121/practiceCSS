@@ -1,3 +1,4 @@
+/* header and footer */
 :root {
   --signatureColor: #f78f1b;
 }
@@ -18,21 +19,6 @@ h6 {
   font-weight: 800;
   line-height: 1.1;
 }
-
-h1::after,
-h2::after {
-  content: "";
-  display: block;
-  position: relative;
-  top: 0.33em;
-  border-bottom: 1px solid hsla(0, 0%, 50%, 0.33);
-}
-
-/* *,
-::after,
-::before {
-  box-sizing: inherit;
-} */
 
 body,
 html {
@@ -108,8 +94,8 @@ p {
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  /* margin: 0;
-  padding: 0; */
+  margin: 0;
+  padding: 0;
 }
 .menu__item {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -177,45 +163,6 @@ p {
   padding-right: 15px;
   padding-left: 15px;
 }
-.container__inside .post__title {
-  background-color: rgba(15, 15, 11, 0.95);
-  background-clip: content-box;
-  padding: 200px 0;
-}
-.post__title {
-  padding: 200px 0 150px;
-}
-
-.post__title .post__heading {
-  font-size: 35px;
-}
-
-.post__title .post__subheading {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 10px 0 30px;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.1;
-  display: block;
-}
-
-.post__title .post__info {
-  font-size: 20px;
-  font-weight: 300;
-  font-style: italic;
-  font-family: Lora, "Times New Roman", serif;
-  line-height: 1.1;
-  display: block;
-}
-
-/* .stackedit__html {
-  margin-bottom: 180px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 30px;
-  padding-right: 30px;
-  max-width: 750px;
-} */
 
 .footer {
   padding: 50px 0 65px;
@@ -342,4 +289,85 @@ svg {
   .container {
     max-width: 1140px;
   }
+}
+
+/* about css */
+.thyun__pic {
+  background: url("thyunAhnMain.jpeg");
+  background-size: cover;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border-radius: 50%;
+}
+
+.text__center {
+  text-align: center;
+}
+
+.my__info h1,
+.my__info h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/* todo::thyun :: 노트하기. 
+  - 아래 css class를 .thyun__name으로 하면, margin-bottom은 위의 margin:0으로 대체됨.
+  - 아래의 class명을 그대로 둔 채, margin-bottom대신 margin으로 하면 위의 margin:0은 30d으로 대체된다.
+  - 위를 그냥 h1으로 하면 .으로 호출한게 아니므로 우선순위가 밑으로 떨어짐.
+  신기방기.
+ */
+.my__info h1 {
+  font-family: "Kaushan Script", cursive;
+  margin-bottom: 30px;
+  font-size: 50px;
+  line-height: 1.3;
+  font-weight: 300;
+  transform: rotate(-5deg);
+}
+
+.thyun__name span {
+  padding: 4px 15px;
+  position: relative;
+}
+
+.thyun__name span::before {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 30px;
+  height: 4px;
+  content: "";
+  background: #fff;
+  margin-left: -30px;
+}
+
+.thyun__name span::after {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 30px;
+  height: 4px;
+  content: "";
+  background: #fff;
+  margin-right: -30px;
+}
+
+.thyun__job span {
+  padding: 4px 15px;
+  position: relative;
+  font-size: 16px;
+}
+
+.my__info h3 {
+  margin-bottom: 30px;
+}
+
+.my__info li {
+  list-style: none;
+}
+.my__info svg {
+  fill: white;
 }
