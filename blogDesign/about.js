@@ -28,9 +28,10 @@ var isMobile = {
 var setHeightElement = document.getElementsByClassName("js__fullHeight")[0];
 
 var fullHeight = function() {
-  if (!isMobile.any()) {
-    setHeightElement.style.height = window.innerHeight + "px";
-  }
+  setHeightElement.style.height = window.innerHeight + "px";
+  // if (!isMobile.any()) {
+  //   setHeightElement.style.height = window.innerHeight + "px";
+  // }
 };
 
 fullHeight();
